@@ -18,4 +18,14 @@ angular
 
 function heroController () {
   this.heros = heroData;
+
+  this.addHero = function () {
+
+    let hero = {name: this.name,
+                number: this.number,
+                universe: this.universe,
+                img: this.img};
+  this.heros.push(hero);
+  }
+
 }

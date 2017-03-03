@@ -14,8 +14,22 @@
   <body ng-controller='herosCtrl as vm'>
     <h2> Phone Book</h2>
 
-    <div ng-repeat= "hero in vm.heros">
+    <div>
+      <label>Search: <input ng-model="searchText"></label>
+    </div>
+
+    <div ng-repeat= "hero in vm.heros | filter:searchText">
       <p>{{$index + 1}}. {{hero.name}}/ {{hero.number}}/{{hero.universe}}/<img src="{{hero.img}}"></p>
+    </div>
+
+
+    <div>
+      <input type="text" ng-model="vm.hero.name" placeholder="hero hame">
+
+      <button ng-click= "vm.addHero()"> Add a Hero's Number</button>
+
+      <p> User Input {{vm.newHero}}</p>
+
     </div>
 
 
